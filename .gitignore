@@ -41,3 +41,6 @@ build/
 .project
 .classpath
 .settings
+
+android/.cxx
+.fvm

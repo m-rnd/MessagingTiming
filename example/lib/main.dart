@@ -65,7 +65,6 @@ Future<double> _calcBasicMessageChannelBinary() async {
       () => messagingTiming.basicMessageChannelBinaryPlatformVersion);
 }
 
-
 Future<double> _calcPigeon() async {
   final MessagingTiming messagingTiming = MessagingTiming();
   final Api api = Api();
@@ -158,13 +157,19 @@ class _MyAppState extends State<MyApp> {
       ['simple method channel (2nd run)', _calcSimpleMethodChannel],
       ['basic message channel (1st run)', _calcBasicMessageChannel],
       ['basic message channel (2nd run)', _calcBasicMessageChannel],
-      ['basic message channel binary (1st run)', _calcBasicMessageChannelBinary],
-      ['basic message channel binary (2nd run)', _calcBasicMessageChannelBinary],
+      [
+        'basic message channel binary (1st run)',
+        _calcBasicMessageChannelBinary
+      ],
+      [
+        'basic message channel binary (2nd run)',
+        _calcBasicMessageChannelBinary
+      ],
       ['pigeon (1st run)', _calcPigeon],
       ['pigeon (2nd run)', _calcPigeon],
-      ['ffi', _calcFfi],
-      ['ffi non-blocking', _calcFfiNonBlocking],
-      ['ffi ui thread', _calcFfiUi],
+      //['ffi', _calcFfi],
+      //['ffi non-blocking', _calcFfiNonBlocking],
+      //['ffi ui thread', _calcFfiUi],
       ['just Dart', _calcDart],
     ], (int index, List entry) => _makeTest('$index', entry[0], entry[1]))
         .toList();
